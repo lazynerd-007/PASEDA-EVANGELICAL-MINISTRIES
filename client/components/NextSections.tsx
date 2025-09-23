@@ -50,7 +50,7 @@ export default function NextSections() {
           <div className="grid grid-cols-2 gap-4">
             <figure className="aspect-[4/5] overflow-hidden rounded-2xl border border-neutral-200 bg-neutral-100">
               <img
-                src="https://megaharvest.org/wp-content/uploads/2023/12/kkkk.jpg"
+                src="https://source.unsplash.com/random/800x1000/?crusade,stadium,crowd"
                 alt="Crusade"
                 className="h-full w-full object-cover grayscale contrast-110"
                 loading="lazy"
@@ -60,7 +60,7 @@ export default function NextSections() {
             <div className="flex flex-col gap-4">
               <figure className="aspect-[4/3] overflow-hidden rounded-2xl border border-neutral-200 bg-neutral-100">
                 <img
-                  src="https://megaharvest.org/wp-content/uploads/2023/12/replace--scaled.jpg"
+                  src="https://source.unsplash.com/random/800x600/?outreach,community,mission"
                   alt="Outreach"
                   className="h-full w-full object-cover grayscale contrast-110"
                   loading="lazy"
