@@ -67,12 +67,15 @@ export default function NextSections() {
                   decoding="async"
                 />
               </figure>
-              <div className="flex h-full items-center justify-center rounded-2xl border border-dashed border-brand/40 text-center text-sm text-neutral-600">
-                <div>
-                  <div className="mx-auto mb-3 h-px w-8 bg-brand/50" />
-                  Curated moments from the field
-                </div>
-              </div>
+              <figure className="aspect-[4/3] overflow-hidden rounded-2xl border border-neutral-200 bg-neutral-100">
+                <img
+                  src="https://picsum.photos/seed/field/800/600"
+                  alt="Curated moments from the field"
+                  className="h-full w-full object-cover grayscale contrast-110"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </figure>
             </div>
           </div>
         </div>
