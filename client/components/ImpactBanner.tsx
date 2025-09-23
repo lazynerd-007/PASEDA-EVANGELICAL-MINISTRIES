@@ -13,9 +13,18 @@ export default function ImpactBanner() {
       {/* Dark overlay */}
       <div className="absolute inset-0 -z-10 bg-black/80" aria-hidden="true" />
 
-      {/* Spacer for height; adjust as needed */}
-      <div className="mx-auto max-w-7xl px-6 py-28 lg:px-8">
-        <div className="min-h-[60vh]" />
+      {/* Content */}
+      <div className="mx-auto max-w-7xl px-6">
+        <div className="flex min-h-[40vh] items-center justify-center py-16 lg:py-20">
+          <div className="text-center">
+            <h1 className="inline-block text-[62px] font-medium leading-none sm:text-[62px]">
+              141,244
+            </h1>
+            <div className="mt-2 text-base tracking-[0.05em] text-white/90">
+              SOULS SAVED SINCE 2019
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   );
