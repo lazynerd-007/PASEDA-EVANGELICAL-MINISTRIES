@@ -50,7 +50,7 @@ export default function NextSections() {
           <div className="grid grid-cols-2 gap-4">
             <figure className="aspect-[4/5] overflow-hidden rounded-2xl border border-neutral-200 bg-neutral-100">
               <img
-                src="https://source.unsplash.com/random/800x1000/?crusade,stadium,crowd"
+                src="https://picsum.photos/seed/crusade/800/1000"
                 alt="Crusade"
                 className="h-full w-full object-cover grayscale contrast-110"
                 loading="lazy"
@@ -60,7 +60,7 @@ export default function NextSections() {
             <div className="flex flex-col gap-4">
               <figure className="aspect-[4/3] overflow-hidden rounded-2xl border border-neutral-200 bg-neutral-100">
                 <img
-                  src="https://source.unsplash.com/random/800x600/?outreach,community,mission"
+                  src="https://picsum.photos/seed/outreach/800/600"
                   alt="Outreach"
                   className="h-full w-full object-cover grayscale contrast-110"
                   loading="lazy"
