@@ -1,11 +1,13 @@
 import Hero from "@/components/Hero";
 import NextSections from "@/components/NextSections";
+import ImpactBanner from "@/components/ImpactBanner";
 
 export default function Index() {
   return (
     <main className="min-h-screen w-full bg-black text-white">
       <Hero />
       <NextSections />
+      <ImpactBanner />
     </main>
   );
 }
