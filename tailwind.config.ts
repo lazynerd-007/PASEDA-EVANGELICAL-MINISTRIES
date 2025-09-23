@@ -84,11 +84,16 @@ export default {
           "0%": { opacity: "0", transform: "translateY(8px)" },
           "100%": { opacity: "1", transform: "translateY(0)" },
         },
+        "loop-rotate": {
+          "0%": { transform: "rotate(0deg)" },
+          "100%": { transform: "rotate(360deg)" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
         reveal: "reveal 0.65s cubic-bezier(0.05, 0.2, 0.1, 1) forwards",
+        "loop-rotate": "loop-rotate 12s linear infinite",
       },
     },
   },
