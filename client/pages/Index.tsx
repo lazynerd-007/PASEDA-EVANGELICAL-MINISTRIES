@@ -3,6 +3,7 @@ import NextSections from "@/components/NextSections";
 import ImpactBanner from "@/components/ImpactBanner";
 import GoalBanner from "@/components/GoalBanner";
 import LightPanel from "@/components/LightPanel";
+import DarkPanel from "@/components/DarkPanel";
 
 export default function Index() {
   return (
@@ -12,6 +13,7 @@ export default function Index() {
       <ImpactBanner />
       <GoalBanner />
       <LightPanel />
+      <DarkPanel />
     </main>
   );
 }
