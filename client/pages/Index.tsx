@@ -2,6 +2,7 @@ import Hero from "@/components/Hero";
 import NextSections from "@/components/NextSections";
 import ImpactBanner from "@/components/ImpactBanner";
 import GoalBanner from "@/components/GoalBanner";
+import LightPanel from "@/components/LightPanel";
 
 export default function Index() {
   return (
@@ -10,6 +11,7 @@ export default function Index() {
       <NextSections />
       <ImpactBanner />
       <GoalBanner />
+      <LightPanel />
     </main>
   );
 }
