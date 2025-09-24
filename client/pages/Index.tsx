@@ -4,6 +4,7 @@ import ImpactBanner from "@/components/ImpactBanner";
 import GoalBanner from "@/components/GoalBanner";
 import LightPanel from "@/components/LightPanel";
 import DarkPanel from "@/components/DarkPanel";
+import PartnerSection from "@/components/PartnerSection";
 
 export default function Index() {
   return (
@@ -14,6 +15,7 @@ export default function Index() {
       <GoalBanner />
       <LightPanel />
       <DarkPanel />
+      <PartnerSection />
     </main>
   );
 }
