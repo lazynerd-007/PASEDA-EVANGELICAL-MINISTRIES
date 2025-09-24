@@ -21,10 +21,10 @@ export default function GoalBanner() {
       />
 
       <div className="mx-auto max-w-7xl px-6">
-        <div className="flex min-h-[80vh] items-center justify-center py-16 lg:py-24">
+        <div className="flex min-h-[50vh] items-center justify-center py-16 lg:py-24">
           <div className="text-center">
-            <h2 className="text-[24vw] leading-none font-semibold sm:text-[10rem] md:text-[14rem]">100,000</h2>
-            <p className="mt-4 text-2xl font-semibold leading-tight tracking-wide text-white sm:text-4xl">
+            <h2 className="text-[14vw] leading-none font-semibold sm:text-7xl md:text-8xl">100,000</h2>
+            <p className="mt-3 text-base font-medium leading-tight tracking-wide text-white/90 sm:text-2xl">
               Annual Souls Goal
             </p>
           </div>
