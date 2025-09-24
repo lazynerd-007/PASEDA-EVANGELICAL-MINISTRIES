@@ -41,8 +41,18 @@ export default function PartnerSection() {
           </div>
         </div>
 
-        {/* Right: spacer */}
-        <div className="hidden md:block" />
+        {/* Right: Image */}
+        <div className="flex items-center justify-center">
+          <figure className="w-full overflow-hidden rounded-2xl border border-neutral-200 bg-neutral-100">
+            <img
+              src="https://megaharvest.org/wp-content/uploads/2023/12/IMG_5948-1024x608.jpg"
+              alt="Partnership impact"
+              className="aspect-[16/9] h-auto w-full object-cover"
+              loading="lazy"
+              decoding="async"
+            />
+          </figure>
+        </div>
       </div>
     </section>
   );
