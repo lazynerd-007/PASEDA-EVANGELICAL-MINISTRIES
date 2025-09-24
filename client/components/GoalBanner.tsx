@@ -21,7 +21,7 @@ export default function GoalBanner() {
       />
 
       <div className="mx-auto max-w-7xl px-6">
-        <div className="flex min-h-[50vh] items-center justify-center py-16 lg:py-24">
+        <div className="flex min-h-[70vh] items-center justify-center py-16 lg:py-24">
           <div className="text-center">
             <h2 className="text-[14vw] leading-none font-medium sm:text-8xl md:text-9xl">100,000</h2>
             <p className="mt-4 text-3xl font-medium leading-tight sm:text-5xl">
