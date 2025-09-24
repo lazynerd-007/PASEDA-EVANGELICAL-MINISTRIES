@@ -1,6 +1,6 @@
 export default function GoalBanner() {
   const BG =
-    "https://megaharvest.org/wp-content/uploads/2023/12/img_6370-scaled.jpg";
+    "https://picsum.photos/1920/1080?random=7";
 
   return (
     <section className="relative isolate w-full text-white">
