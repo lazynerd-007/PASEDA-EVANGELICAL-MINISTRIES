@@ -3,20 +3,15 @@ export default function PartnerSection() {
   return (
     <section className="relative w-full bg-white text-neutral-900">
       <div className="mx-auto grid max-w-7xl grid-cols-1 gap-10 px-6 py-24 md:grid-cols-2 lg:px-8">
-        {/* Left: Heading */}
-        <div className="flex items-center pl-0 md:pl-11">
-          <h2 className="max-w-[520px] text-5xl font-medium leading-tight sm:text-6xl">
+        {/* Left: Heading + Copy + CTA */}
+        <div className="flex flex-col justify-center pl-0 text-left md:pl-11">
+          <h2 className="max-w-[720px] text-5xl font-medium leading-tight sm:text-6xl">
             <span className="block">Become a partner.</span>
             <span className="block">Make an eternal impact.</span>
           </h2>
-        </div>
-
-        {/* Right: Copy + CTA */}
-        <div className="flex flex-col justify-center">
-          <p className="max-w-[550px] text-base leading-7 text-neutral-700">
+          <p className="mt-6 max-w-[700px] text-base leading-7 text-neutral-700">
             Do you share a passion for reaching the lost? Do you desire to be personally involved in the end-time harvest in a meaningful way? Mega Harvest Partnership Program puts you on the front line of global evangelism. The ministry partnership program is a practical and highly effective initiative that reaches thousands of precious souls face to face and millions via television with the gospel of Jesus Christ every year. We are on a mission to announce Jesus to all nations until He is Believed throughout the world. You can be a significant part of it!
           </p>
-
           <div className="mt-6">
             <a
               href="https://megaharvest.org/giving"
@@ -45,6 +40,9 @@ export default function PartnerSection() {
             </a>
           </div>
         </div>
+
+        {/* Right: spacer */}
+        <div className="hidden md:block" />
       </div>
     </section>
   );
