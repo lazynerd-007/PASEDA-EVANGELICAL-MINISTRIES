@@ -3,7 +3,7 @@ const IMG_URL =
 
 export default function ImageOverlaySection() {
   return (
-    <section className="relative isolate w-full bg-black text-white">
+    <section id="preacher" aria-label="preacher" className="relative isolate w-full bg-black text-white">
       <div className="absolute inset-0 -z-10" aria-hidden>
         <img
           src={IMG_URL}
