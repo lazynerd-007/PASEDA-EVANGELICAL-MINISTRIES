@@ -1,5 +1,5 @@
 const IMG_URL =
-  "https://megaharvest.org/wp-content/uploads/2022/12/screenshot-2022-12-06-at-10.12.04-am.jpg";
+  "https://megaharvest.org/wp-content/uploads/2022/12/Screenshot-2022-12-06-at-10.12.04-AM.jpg";
 
 export default function ImageOverlaySection() {
   return (

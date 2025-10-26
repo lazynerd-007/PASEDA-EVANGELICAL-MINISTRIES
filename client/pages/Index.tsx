@@ -15,9 +15,9 @@ export default function Index() {
       <ImpactBanner />
       <GoalBanner />
       <PartnerSection />
+      <ImageOverlaySection />
       <LightPanel />
       <DarkPanel />
-      <ImageOverlaySection />
     </main>
   );
 }
