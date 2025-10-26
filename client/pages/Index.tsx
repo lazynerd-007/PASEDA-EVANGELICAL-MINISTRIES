@@ -6,6 +6,7 @@ import LightPanel from "@/components/LightPanel";
 import DarkPanel from "@/components/DarkPanel";
 import PartnerSection from "@/components/PartnerSection";
 import ImageOverlaySection from "@/components/ImageOverlaySection";
+import TestimonySection from "@/components/TestimonySection";
 
 export default function Index() {
   return (
@@ -16,6 +17,7 @@ export default function Index() {
       <GoalBanner />
       <PartnerSection />
       <ImageOverlaySection />
+      <TestimonySection />
       <LightPanel />
       <DarkPanel />
     </main>
