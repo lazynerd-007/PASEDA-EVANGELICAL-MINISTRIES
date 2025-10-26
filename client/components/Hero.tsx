@@ -8,7 +8,7 @@ const CTA_TEXT = "BECOME A PARTNER";
 
 export default function Hero() {
   return (
-    <section className="relative isolate flex min-h-screen w-full items-center justify-center bg-black text-white">
+    <section id="Hero" aria-label="Hero" className="relative isolate flex min-h-screen w-full items-center justify-center bg-black text-white">
       <div className="absolute inset-0">
         <img
           src={BG_IMAGE}

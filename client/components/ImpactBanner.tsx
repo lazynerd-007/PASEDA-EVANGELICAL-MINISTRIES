@@ -3,7 +3,7 @@ export default function ImpactBanner() {
     "https://megaharvest.org/wp-content/uploads/2022/12/blak-mhgm.jpg";
 
   return (
-    <section className="relative isolate w-full text-white">
+    <section id="counter" aria-label="counter" className="relative isolate w-full text-white">
       {/* Background image */}
       <div
         className="absolute inset-0 -z-10 bg-no-repeat bg-cover"

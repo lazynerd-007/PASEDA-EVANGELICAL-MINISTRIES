@@ -1,7 +1,7 @@
 export default function PartnerSection() {
   const CTA = "BECOME A PARTNER";
   return (
-    <section className="relative w-full bg-white text-neutral-900">
+    <section id="partner" aria-label="partner" className="relative w-full bg-white text-neutral-900">
       <div className="mx-auto grid max-w-7xl grid-cols-1 gap-10 px-6 py-24 md:grid-cols-2 lg:px-8">
         {/* Left: Heading + Copy + CTA */}
         <div className="flex flex-col justify-center pl-0 text-left md:pl-11">

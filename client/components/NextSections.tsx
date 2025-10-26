@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 export default function NextSections() {
   return (
-    <section className="relative w-full bg-white text-neutral-900">
+    <section id="vison" aria-label="vison" className="relative w-full bg-white text-neutral-900">
       <div className="mx-auto max-w-7xl px-6 py-28 lg:px-8">
         {/* Heading */}
         <div className="mx-auto mb-20 max-w-3xl text-center">
