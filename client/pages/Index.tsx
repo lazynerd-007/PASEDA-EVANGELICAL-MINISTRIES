@@ -7,6 +7,7 @@ import DarkPanel from "@/components/DarkPanel";
 import PartnerSection from "@/components/PartnerSection";
 import ImageOverlaySection from "@/components/ImageOverlaySection";
 import TestimonySection from "@/components/TestimonySection";
+import BookingSection from "@/components/BookingSection";
 
 export default function Index() {
   return (
@@ -18,6 +19,7 @@ export default function Index() {
       <PartnerSection />
       <ImageOverlaySection />
       <TestimonySection />
+      <BookingSection />
       <LightPanel />
       <DarkPanel />
     </main>
