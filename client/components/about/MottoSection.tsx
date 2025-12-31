@@ -1,17 +1,21 @@
+import FadeIn from "@/components/animations/FadeIn";
+
 export default function MottoSection() {
   return (
     <section className="bg-neutral-50">
       <div className="grid md:grid-cols-2">
         {/* Text Side */}
         <div className="flex flex-col justify-center px-8 py-24 text-center md:px-16 lg:text-right">
-          <h2 className="mb-4 text-xl font-bold uppercase tracking-widest text-neutral-900">
-            Motto
-          </h2>
-          <p className="text-3xl font-light leading-tight text-neutral-800 md:text-4xl lg:text-5xl">
-            Our generation shall be
-            <br />
-            <span className="font-semibold">shaken!</span>
-          </p>
+          <FadeIn direction="right">
+            <h2 className="mb-4 text-xl font-bold uppercase tracking-widest text-neutral-900">
+              Motto
+            </h2>
+            <p className="text-3xl font-light leading-tight text-neutral-800 md:text-4xl lg:text-5xl">
+              Our generation shall be
+              <br />
+              <span className="font-semibold">shaken!</span>
+            </p>
+          </FadeIn>
         </div>
 
         {/* Image Side */}

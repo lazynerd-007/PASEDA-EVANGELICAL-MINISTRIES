@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import FadeIn from "@/components/animations/FadeIn";
 
 export default function MissionVision() {
   return (
@@ -6,7 +6,7 @@ export default function MissionVision() {
       <div className="grid gap-12 lg:grid-cols-2 lg:gap-24">
         {/* Left Column */}
         <div className="space-y-12">
-          <div className="space-y-4">
+          <FadeIn className="space-y-4">
             <h2 className="text-2xl font-bold uppercase tracking-wide text-neutral-900">
               Our Mission
             </h2>
@@ -14,19 +14,19 @@ export default function MissionVision() {
               To announce Jesus Christ to the Nations until he is believed
               throughout the world – 1Tim:3:16
             </p>
-          </div>
+          </FadeIn>
 
-          <div className="relative">
+          <FadeIn delay={0.2} className="relative">
             <div className="aspect-[4/3] overflow-hidden rounded-lg bg-neutral-100">
               <img
                 src="https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=2574&auto=format&fit=crop"
                 alt="Preacher Jay"
-                className="h-full w-full object-cover"
+                className="h-full w-full object-cover transition-transform duration-700 hover:scale-105"
               />
             </div>
             {/* Circular Text Decoration */}
             <div className="absolute -right-12 -top-12 hidden animate-spin-slow md:block">
-               <svg viewBox="0 0 100 100" width="160" height="160">
+              <svg viewBox="0 0 100 100" width="160" height="160">
                 <defs>
                   <path
                     id="circle"
@@ -40,21 +40,21 @@ export default function MissionVision() {
                 </text>
               </svg>
             </div>
-          </div>
+          </FadeIn>
         </div>
 
         {/* Right Column */}
         <div className="space-y-12">
-          <div className="space-y-4">
+          <FadeIn delay={0.1} className="space-y-4">
             <h2 className="text-2xl font-bold uppercase tracking-wide text-neutral-900">
               Our Vision
             </h2>
             <p className="text-lg font-medium leading-relaxed text-neutral-700">
               To be on the frontline of global evangelism
             </p>
-          </div>
+          </FadeIn>
 
-          <div className="space-y-6">
+          <FadeIn delay={0.3} className="space-y-6">
             <h2 className="text-4xl font-bold tracking-tight text-neutral-900 md:text-5xl">
               About
               <br />
@@ -79,7 +79,7 @@ export default function MissionVision() {
                 inspired by the ministry of Dr. T.L. Osborn.
               </p>
             </div>
-          </div>
+          </FadeIn>
         </div>
       </div>
     </section>

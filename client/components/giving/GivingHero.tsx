@@ -1,3 +1,5 @@
+import FadeIn from "@/components/animations/FadeIn";
+
 export default function GivingHero() {
   return (
     <section className="relative h-[60vh] w-full overflow-hidden md:h-[70vh]">
@@ -12,9 +14,11 @@ export default function GivingHero() {
 
       <div className="absolute inset-0 flex items-center justify-center">
         <div className="container mx-auto px-4 text-center">
-          <h1 className="marquee-text whitespace-nowrap text-5xl font-bold text-white md:text-7xl lg:text-9xl">
-            The Gospel Invest in The Gospel Invest in The Gospel
-          </h1>
+          <FadeIn>
+            <h1 className="marquee-text whitespace-nowrap text-5xl font-bold text-white md:text-7xl lg:text-9xl">
+              The Gospel Invest in The Gospel Invest in The Gospel
+            </h1>
+          </FadeIn>
         </div>
       </div>
 

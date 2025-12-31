@@ -21,6 +21,7 @@ import {
 } from "@/components/ui/select";
 import { Checkbox } from "@/components/ui/checkbox";
 import { toast } from "sonner";
+import FadeIn from "@/components/animations/FadeIn";
 
 const formSchema = z.object({
   fullName: z.string().min(2, {
@@ -74,237 +75,239 @@ export default function BookingForm() {
   return (
     <section className="bg-white pb-24">
       <div className="container mx-auto max-w-4xl px-4">
-        <div className="mb-12 border-b pb-4">
+        <FadeIn className="mb-12 border-b pb-4">
           <h2 className="text-center text-4xl font-bold text-neutral-900">
             Booking Form
           </h2>
-        </div>
+        </FadeIn>
 
-        <Form {...form}>
-          <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
-            <FormField
-              control={form.control}
-              name="fullName"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel className="text-base font-bold text-neutral-900">
-                    Full Name <span className="text-red-500">*</span>
-                  </FormLabel>
-                  <FormControl>
-                    <Input
-                      {...field}
-                      className="border-neutral-200 bg-neutral-50 p-6"
-                    />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-
-            <FormField
-              control={form.control}
-              name="email"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel className="text-base font-bold text-neutral-900">
-                    Email <span className="text-red-500">*</span>
-                  </FormLabel>
-                  <FormControl>
-                    <Input
-                      type="email"
-                      {...field}
-                      className="border-neutral-200 bg-neutral-50 p-6"
-                    />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-
-            <FormField
-              control={form.control}
-              name="title"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel className="text-base font-bold text-neutral-900">
-                    Title <span className="text-red-500">*</span>
-                  </FormLabel>
-                  <FormDescription>
-                    Examples: Senior Pastor, Event Coordinator, Conference Host.
-                  </FormDescription>
-                  <FormControl>
-                    <Input
-                      {...field}
-                      className="border-neutral-200 bg-neutral-50 p-6"
-                    />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-
-            <FormField
-              control={form.control}
-              name="organizationName"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel className="text-base font-bold text-neutral-900">
-                    What is the name of the church/ministry hosting the event?{" "}
-                    <span className="text-red-500">*</span>
-                  </FormLabel>
-                  <FormControl>
-                    <Input
-                      {...field}
-                      className="border-neutral-200 bg-neutral-50 p-6"
-                    />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-
-            <FormField
-              control={form.control}
-              name="dates"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel className="text-base font-bold text-neutral-900">
-                    What are the dates you want Preacher Jay to minister?{" "}
-                    <span className="text-red-500">*</span>
-                  </FormLabel>
-                  <FormControl>
-                    <Input
-                      {...field}
-                      className="border-neutral-200 bg-neutral-50 p-6"
-                    />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-
-            <FormField
-              control={form.control}
-              name="location"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel className="text-base font-bold text-neutral-900">
-                    Country and City <span className="text-red-500">*</span>
-                  </FormLabel>
-                  <FormControl>
-                    <Input
-                      {...field}
-                      className="border-neutral-200 bg-neutral-50 p-6"
-                    />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-
-            <FormField
-              control={form.control}
-              name="bookingType"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel className="text-base font-bold text-neutral-900">
-                    Booking Type? <span className="text-red-500">*</span>
-                  </FormLabel>
-                  <Select
-                    onValueChange={field.onChange}
-                    defaultValue={field.value}
-                  >
+        <FadeIn delay={0.2}>
+          <Form {...form}>
+            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
+              <FormField
+                control={form.control}
+                name="fullName"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel className="text-base font-bold text-neutral-900">
+                      Full Name <span className="text-red-500">*</span>
+                    </FormLabel>
                     <FormControl>
-                      <SelectTrigger className="border-neutral-200 bg-neutral-50 py-6">
-                        <SelectValue placeholder="Select booking type" />
-                      </SelectTrigger>
+                      <Input
+                        {...field}
+                        className="border-neutral-200 bg-neutral-50 p-6"
+                      />
                     </FormControl>
-                    <SelectContent>
-                      <SelectItem value="church">
-                        Guest speaker for church
-                      </SelectItem>
-                      <SelectItem value="conference">Conference</SelectItem>
-                      <SelectItem value="crusade">Crusade</SelectItem>
-                      <SelectItem value="other">Other</SelectItem>
-                    </SelectContent>
-                  </Select>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
 
-            <FormField
-              control={form.control}
-              name="participants"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel className="text-base font-bold text-neutral-900">
-                    What is your expected number of participants?{" "}
-                    <span className="text-red-500">*</span>
-                  </FormLabel>
-                  <FormControl>
-                    <Input
-                      type="number"
-                      {...field}
-                      className="border-neutral-200 bg-neutral-50 p-6"
-                    />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-
-            <FormField
-              control={form.control}
-              name="allowOffering"
-              render={({ field }) => (
-                <FormItem className="space-y-4">
-                  <FormLabel className="text-base font-bold text-neutral-900">
-                    Are you willing to allow Preacher Jay to take up an offering
-                    in each of the services he ministers?{" "}
-                    <span className="text-red-500">*</span>
-                  </FormLabel>
-                  <div className="flex flex-col gap-2">
-                    <div className="flex items-center space-x-2">
-                      <Checkbox
-                        id="offering-yes"
-                        checked={field.value === true}
-                        onCheckedChange={() => field.onChange(true)}
+              <FormField
+                control={form.control}
+                name="email"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel className="text-base font-bold text-neutral-900">
+                      Email <span className="text-red-500">*</span>
+                    </FormLabel>
+                    <FormControl>
+                      <Input
+                        type="email"
+                        {...field}
+                        className="border-neutral-200 bg-neutral-50 p-6"
                       />
-                      <label
-                        htmlFor="offering-yes"
-                        className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
-                      >
-                        Yes
-                      </label>
-                    </div>
-                    <div className="flex items-center space-x-2">
-                      <Checkbox
-                        id="offering-no"
-                        checked={field.value === false}
-                        onCheckedChange={() => field.onChange(false)}
-                      />
-                      <label
-                        htmlFor="offering-no"
-                        className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
-                      >
-                        No
-                      </label>
-                    </div>
-                  </div>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
 
-            <Button
-              type="submit"
-              className="h-auto rounded bg-yellow-500 px-8 py-3 text-base font-bold text-white hover:bg-yellow-600"
-            >
-              Submit
-            </Button>
-          </form>
-        </Form>
+              <FormField
+                control={form.control}
+                name="title"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel className="text-base font-bold text-neutral-900">
+                      Title <span className="text-red-500">*</span>
+                    </FormLabel>
+                    <FormDescription>
+                      Examples: Senior Pastor, Event Coordinator, Conference Host.
+                    </FormDescription>
+                    <FormControl>
+                      <Input
+                        {...field}
+                        className="border-neutral-200 bg-neutral-50 p-6"
+                      />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+
+              <FormField
+                control={form.control}
+                name="organizationName"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel className="text-base font-bold text-neutral-900">
+                      What is the name of the church/ministry hosting the event?{" "}
+                      <span className="text-red-500">*</span>
+                    </FormLabel>
+                    <FormControl>
+                      <Input
+                        {...field}
+                        className="border-neutral-200 bg-neutral-50 p-6"
+                      />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+
+              <FormField
+                control={form.control}
+                name="dates"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel className="text-base font-bold text-neutral-900">
+                      What are the dates you want Preacher Jay to minister?{" "}
+                      <span className="text-red-500">*</span>
+                    </FormLabel>
+                    <FormControl>
+                      <Input
+                        {...field}
+                        className="border-neutral-200 bg-neutral-50 p-6"
+                      />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+
+              <FormField
+                control={form.control}
+                name="location"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel className="text-base font-bold text-neutral-900">
+                      Country and City <span className="text-red-500">*</span>
+                    </FormLabel>
+                    <FormControl>
+                      <Input
+                        {...field}
+                        className="border-neutral-200 bg-neutral-50 p-6"
+                      />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+
+              <FormField
+                control={form.control}
+                name="bookingType"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel className="text-base font-bold text-neutral-900">
+                      Booking Type? <span className="text-red-500">*</span>
+                    </FormLabel>
+                    <Select
+                      onValueChange={field.onChange}
+                      defaultValue={field.value}
+                    >
+                      <FormControl>
+                        <SelectTrigger className="border-neutral-200 bg-neutral-50 py-6">
+                          <SelectValue placeholder="Select booking type" />
+                        </SelectTrigger>
+                      </FormControl>
+                      <SelectContent>
+                        <SelectItem value="church">
+                          Guest speaker for church
+                        </SelectItem>
+                        <SelectItem value="conference">Conference</SelectItem>
+                        <SelectItem value="crusade">Crusade</SelectItem>
+                        <SelectItem value="other">Other</SelectItem>
+                      </SelectContent>
+                    </Select>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+
+              <FormField
+                control={form.control}
+                name="participants"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel className="text-base font-bold text-neutral-900">
+                      What is your expected number of participants?{" "}
+                      <span className="text-red-500">*</span>
+                    </FormLabel>
+                    <FormControl>
+                      <Input
+                        type="number"
+                        {...field}
+                        className="border-neutral-200 bg-neutral-50 p-6"
+                      />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+
+              <FormField
+                control={form.control}
+                name="allowOffering"
+                render={({ field }) => (
+                  <FormItem className="space-y-4">
+                    <FormLabel className="text-base font-bold text-neutral-900">
+                      Are you willing to allow Preacher Jay to take up an offering
+                      in each of the services he ministers?{" "}
+                      <span className="text-red-500">*</span>
+                    </FormLabel>
+                    <div className="flex flex-col gap-2">
+                      <div className="flex items-center space-x-2">
+                        <Checkbox
+                          id="offering-yes"
+                          checked={field.value === true}
+                          onCheckedChange={() => field.onChange(true)}
+                        />
+                        <label
+                          htmlFor="offering-yes"
+                          className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+                        >
+                          Yes
+                        </label>
+                      </div>
+                      <div className="flex items-center space-x-2">
+                        <Checkbox
+                          id="offering-no"
+                          checked={field.value === false}
+                          onCheckedChange={() => field.onChange(false)}
+                        />
+                        <label
+                          htmlFor="offering-no"
+                          className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+                        >
+                          No
+                        </label>
+                      </div>
+                    </div>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+
+              <Button
+                type="submit"
+                className="h-auto rounded bg-yellow-500 px-8 py-3 text-base font-bold text-white hover:bg-yellow-600"
+              >
+                Submit
+              </Button>
+            </form>
+          </Form>
+        </FadeIn>
       </div>
     </section>
   );
