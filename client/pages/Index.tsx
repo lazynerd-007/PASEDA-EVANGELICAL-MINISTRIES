@@ -21,6 +21,7 @@ export default function Index() {
       <ImageOverlaySection />
       <TestimonySection />
       <BookingSection />
+      <Newsletter />
       <LightPanel />
       <DarkPanel />
     </main>
