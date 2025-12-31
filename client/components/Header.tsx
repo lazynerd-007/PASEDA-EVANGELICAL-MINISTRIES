@@ -8,10 +8,8 @@ const LOGO = "https://megaharvest.org/wp-content/uploads/2024/11/2x@2x.png";
 const NAV = [
   { label: "Home", href: "/", internal: true },
   { label: "About Us", href: "/about", internal: true },
-  { label: "Testimonies", href: "https://megaharvest.org/testimonies/" },
-  { label: "Booking", href: "https://megaharvest.org/booking/" },
-  { label: "Giving", href: "https://megaharvest.org/giving/" },
-  { label: "Sermons", href: "https://megaharvest.org/album/our-resources/" },
+  { label: "Booking", href: "/booking", internal: true },
+  { label: "Giving", href: "/giving", internal: true },
 ];
 
 export default function Header() {
