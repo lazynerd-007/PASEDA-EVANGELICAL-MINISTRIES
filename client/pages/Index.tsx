@@ -8,6 +8,7 @@ import PartnerSection from "@/components/PartnerSection";
 import ImageOverlaySection from "@/components/ImageOverlaySection";
 import TestimonySection from "@/components/TestimonySection";
 import BookingSection from "@/components/BookingSection";
+import Newsletter from "@/components/Newsletter";
 
 export default function Index() {
   return (
