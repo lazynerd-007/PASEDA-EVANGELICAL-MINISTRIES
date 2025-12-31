@@ -9,6 +9,7 @@ import ImageOverlaySection from "@/components/ImageOverlaySection";
 import TestimonySection from "@/components/TestimonySection";
 import BookingSection from "@/components/BookingSection";
 import Newsletter from "@/components/Newsletter";
+import Footer from "@/components/Footer";
 
 export default function Index() {
   return (
