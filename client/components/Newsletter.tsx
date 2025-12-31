@@ -1,12 +1,15 @@
 import { useState } from "react";
 import { cn } from "@/lib/utils";
 
-const BG_IMAGE = "https://megaharvest.org/wp-content/uploads/2022/10/about2.jpg";
+const BG_IMAGE =
+  "https://megaharvest.org/wp-content/uploads/2022/10/about2.jpg";
 
 export default function Newsletter() {
   const [email, setEmail] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle");
+  const [submitStatus, setSubmitStatus] = useState<
+    "idle" | "success" | "error"
+  >("idle");
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -69,8 +72,8 @@ export default function Newsletter() {
 
           {/* Description */}
           <p className="mt-6 max-w-2xl text-base text-white/90 sm:text-lg">
-            Get the latest updates, news, and events delivered straight to your inbox.
-            Join our community today.
+            Get the latest updates, news, and events delivered straight to your
+            inbox. Join our community today.
           </p>
 
           {/* Newsletter form */}

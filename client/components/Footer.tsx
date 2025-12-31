@@ -1,6 +1,7 @@
 import { Twitter, Facebook, Youtube, Instagram } from "lucide-react";
 
-const BG_IMAGE = "https://megaharvest.org/wp-content/uploads/2022/12/footer.jpg";
+const BG_IMAGE =
+  "https://megaharvest.org/wp-content/uploads/2022/12/footer.jpg";
 
 const SOCIAL_LINKS = [
   {
