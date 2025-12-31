@@ -25,6 +25,7 @@ export default function Index() {
       <Newsletter />
       <LightPanel />
       <DarkPanel />
+      <Footer />
     </main>
   );
 }
