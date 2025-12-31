@@ -23,8 +23,6 @@ export default function Index() {
       <TestimonySection />
       <BookingSection />
       <Newsletter />
-      <LightPanel />
-      <DarkPanel />
       <Footer />
     </main>
   );
