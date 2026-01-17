@@ -22,6 +22,7 @@ import {
 import { Checkbox } from "@/components/ui/checkbox";
 import { toast } from "sonner";
 import FadeIn from "@/components/animations/FadeIn";
+import emailjs from "@emailjs/browser";
 
 const formSchema = z.object({
   fullName: z.string().min(2, {
@@ -66,10 +67,41 @@ export default function BookingForm() {
     },
   });
 
-  function onSubmit(values: z.infer<typeof formSchema>) {
-    console.log(values);
-    toast.success("Booking request sent successfully!");
-    form.reset();
+  async function onSubmit(values: z.infer<typeof formSchema>) {
+    try {
+      const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+      const templateId = import.meta.env.VITE_EMAILJS_BOOKING_TEMPLATE_ID;
+      const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+
+      if (!serviceId || !templateId || !publicKey) {
+        toast.error("EmailJS configuration is missing. Please check your .env file.");
+        console.error("Missing EmailJS env vars");
+        return;
+      }
+
+      await emailjs.send(
+        serviceId,
+        templateId,
+        {
+          fullName: values.fullName,
+          email: values.email,
+          title: values.title,
+          organizationName: values.organizationName,
+          dates: values.dates,
+          location: values.location,
+          bookingType: values.bookingType,
+          participants: values.participants,
+          allowOffering: values.allowOffering ? "Yes" : "No",
+        },
+        publicKey
+      );
+
+      toast.success("Booking request sent successfully!");
+      form.reset();
+    } catch (error) {
+      console.error("EmailJS Error:", error);
+      toast.error("Failed to send booking request. Please try again.");
+    }
   }
 
   return (
@@ -302,8 +334,9 @@ export default function BookingForm() {
               <Button
                 type="submit"
                 className="h-auto rounded bg-yellow-500 px-8 py-3 text-base font-bold text-white hover:bg-yellow-600"
+                disabled={form.formState.isSubmitting}
               >
-                Submit
+                {form.formState.isSubmitting ? "Sending..." : "Submit"}
               </Button>
             </form>
           </Form>

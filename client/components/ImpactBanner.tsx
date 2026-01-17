@@ -1,6 +1,6 @@
 export default function ImpactBanner() {
   const BG =
-    "https://megaharvest.org/wp-content/uploads/2022/12/blak-mhgm.jpg";
+    "https://pasedaministries.org/wp-content/uploads/2022/12/blak-pm.jpg";    
 
   return (
     <section id="counter" aria-label="counter" className="relative isolate w-full text-white">

@@ -1,8 +1,9 @@
 import { useState } from "react";
 import { cn } from "@/lib/utils";
+import emailjs from "@emailjs/browser";
+import { toast } from "sonner";
 
-const BG_IMAGE =
-  "https://megaharvest.org/wp-content/uploads/2022/10/about2.jpg";
+const BG_IMAGE = "/images/footer-bg.jpg";
 
 export default function Newsletter() {
   const [email, setEmail] = useState("");
@@ -16,13 +17,34 @@ export default function Newsletter() {
     setIsSubmitting(true);
 
     try {
-      // Add your newsletter subscription logic here
-      await new Promise((resolve) => setTimeout(resolve, 1000));
+      const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+      const templateId = import.meta.env.VITE_EMAILJS_NEWSLETTER_TEMPLATE_ID;
+      const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+
+      if (!serviceId || !templateId || !publicKey) {
+        toast.error("EmailJS configuration is missing. Please check your .env file.");
+        console.error("Missing EmailJS env vars");
+        setSubmitStatus("error");
+        return;
+      }
+
+      await emailjs.send(
+        serviceId,
+        templateId,
+        {
+          email: email,
+        },
+        publicKey
+      );
+
       setSubmitStatus("success");
       setEmail("");
+      toast.success("Subscribed to newsletter successfully!");
       setTimeout(() => setSubmitStatus("idle"), 3000);
     } catch (error) {
+      console.error("EmailJS Error:", error);
       setSubmitStatus("error");
+      toast.error("Failed to subscribe. Please try again.");
       setTimeout(() => setSubmitStatus("idle"), 3000);
     } finally {
       setIsSubmitting(false);
@@ -100,33 +122,19 @@ export default function Newsletter() {
               type="submit"
               disabled={isSubmitting}
               className={cn(
-                "inline-flex items-center justify-center rounded-md bg-black px-6 py-3 font-semibold text-white",
-                "ring-1 ring-white/20 transition duration-300",
-                "hover:bg-neutral-900 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/50",
-                "disabled:opacity-50 disabled:cursor-not-allowed",
-                "sm:px-8 whitespace-nowrap",
+                "w-full rounded-md bg-white px-6 py-3 text-sm font-semibold text-neutral-900 shadow-sm hover:bg-neutral-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white sm:w-auto",
+                "disabled:opacity-50 disabled:cursor-not-allowed"
               )}
             >
               {isSubmitting ? "Subscribing..." : "Subscribe"}
             </button>
           </form>
-
-          {/* Status messages */}
           {submitStatus === "success" && (
-            <p className="mt-4 text-sm text-green-300">
-              ✓ Thank you for subscribing!
-            </p>
+            <p className="mt-4 text-green-400">Thanks for subscribing!</p>
           )}
           {submitStatus === "error" && (
-            <p className="mt-4 text-sm text-red-300">
-              Something went wrong. Please try again.
-            </p>
+            <p className="mt-4 text-red-400">Something went wrong. Try again.</p>
           )}
-
-          {/* Privacy notice */}
-          <p className="mt-6 text-xs text-white/60">
-            We respect your privacy. Unsubscribe at any time.
-          </p>
         </div>
       </div>
     </section>
