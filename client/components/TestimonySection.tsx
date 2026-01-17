@@ -25,7 +25,7 @@ export default function TestimonySection() {
           <div className="mx-auto w-[240px] sm:w-[280px] md:w-[300px]">
             <div className="relative aspect-[9/16] overflow-hidden rounded-2xl border border-neutral-200 bg-black shadow-xl ring-1 ring-black/5">
               <img
-                src="https://megaharvest.org/wp-content/uploads/2023/12/IMG_5948-1024x608.jpg"
+                src="/images/testimony.jpg"
                 alt="Testimony video preview"
                 className="h-full w-full object-cover"
                 loading="lazy"

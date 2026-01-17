@@ -14,7 +14,7 @@ export default function PartnerSection() {
           </p>
           <div className="mt-6">
             <a
-              href="https://megaharvest.org/giving"
+              href="https://pasedaministries.org/giving"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center rounded-md bg-black px-10 py-3 text-white ring-1 ring-black/10 transition-colors hover:bg-neutral-900 focus:outline-none focus-visible:ring-2 focus-visible:ring-black/40"
@@ -45,7 +45,7 @@ export default function PartnerSection() {
         <div className="flex items-center justify-center">
           <figure className="w-full overflow-hidden rounded-2xl border border-neutral-200 bg-neutral-100">
             <img
-              src="https://megaharvest.org/wp-content/uploads/2023/12/IMG_5948-1024x608.jpg"
+              src="/images/hero-bg.jpg"
               alt="Partnership impact"
               className="aspect-[16/9] h-auto w-full object-cover"
               loading="lazy"

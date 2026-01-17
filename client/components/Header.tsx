@@ -3,7 +3,7 @@ import { Menu, X } from "lucide-react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
-const LOGO = "https://megaharvest.org/wp-content/uploads/2024/11/2x@2x.png";
+const LOGO = "/images/logo.svg";
 
 const NAV = [
   { label: "Home", href: "/", internal: true },

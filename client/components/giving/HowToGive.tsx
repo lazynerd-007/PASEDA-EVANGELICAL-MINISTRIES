@@ -33,14 +33,52 @@ export default function HowToGive() {
           </div>
         </FadeIn>
 
-        {/* Account Details Image */}
+        {/* Account Details */}
         <FadeIn delay={0.4}>
-          <div className="mx-auto w-full max-w-3xl overflow-hidden rounded-lg shadow-xl">
-            <img
-              src="https://placehold.co/800x400/e2e8f0/1e293b?text=Nigerian+Account+Details"
-              alt="Nigerian Account Details"
-              className="h-auto w-full"
-            />
+          <div className="mx-auto w-full max-w-2xl overflow-hidden rounded-xl bg-neutral-50 border border-neutral-200 shadow-lg">
+            <div className="bg-neutral-900 px-6 py-4">
+              <h3 className="text-xl font-bold text-white">
+                Nigerian Account Details
+              </h3>
+            </div>
+            <div className="p-8 space-y-6 text-left md:px-12">
+              <div className="flex flex-col gap-1 border-b border-neutral-200 pb-4">
+                <span className="text-sm font-medium uppercase tracking-wider text-neutral-500">
+                  Bank Name
+                </span>
+                <span className="text-2xl font-bold text-neutral-900">
+                  Zenith Bank
+                </span>
+              </div>
+              <div className="flex flex-col gap-1 border-b border-neutral-200 pb-4">
+                <span className="text-sm font-medium uppercase tracking-wider text-neutral-500">
+                  Account Name
+                </span>
+                <span className="text-xl font-bold text-neutral-900">
+                  Paseda Evangelical Ministries
+                </span>
+              </div>
+              <div className="flex flex-col gap-1">
+                <span className="text-sm font-medium uppercase tracking-wider text-neutral-500">
+                  Account Number
+                </span>
+                <div className="flex items-center gap-4">
+                  <span className="text-3xl font-mono font-bold text-neutral-900 tracking-wider">
+                    1015678901
+                  </span>
+                  <button
+                    onClick={() => {
+                      navigator.clipboard.writeText("1015678901");
+                      // You might want to add a toast notification here if desired
+                    }}
+                    className="rounded-md bg-neutral-200 px-3 py-1 text-xs font-bold uppercase text-neutral-700 hover:bg-neutral-300 transition-colors"
+                    title="Copy Account Number"
+                  >
+                    Copy
+                  </button>
+                </div>
+              </div>
+            </div>
           </div>
         </FadeIn>
       </div>

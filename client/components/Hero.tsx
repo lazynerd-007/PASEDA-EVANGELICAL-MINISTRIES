@@ -1,10 +1,8 @@
 import { cn } from "@/lib/utils";
 import FadeIn from "@/components/animations/FadeIn";
 
-const BG_IMAGE =
-  "https://megaharvest.org/wp-content/uploads/2025/06/img_0486-2-scaled.jpg";
-const CENTER_IMAGE =
-  "https://megaharvest.org/wp-content/uploads/2025/01/rehoboth-web-1536x1536.png";
+const BG_IMAGE = "/images/hero-bg.jpg";
+const CENTER_IMAGE = "/images/hero-center.jpg";
 const CTA_TEXT = "BECOME A PARTNER";
 
 export default function Hero() {
@@ -50,7 +48,7 @@ export default function Hero() {
 
         <FadeIn className="relative z-10 text-center" delay={0.3}>
           <a
-            href="https://megaharvest.org/giving"
+            href="https://pasedaministries.org/giving"  
             target="_blank"
             rel="noopener noreferrer"
             className={cn(
