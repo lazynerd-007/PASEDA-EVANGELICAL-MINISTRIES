@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paseda Ministries - Configuration & Deployment Guide</title>
+    <style>
+        body {
+            font-family: system-ui, -apple-system, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem;
+            background-color: #f9f9f9;
+        }
+        .container {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        h1 {
+            border-bottom: 2px solid #f59e0b;
+            padding-bottom: 0.5rem;
+            color: #111;
+        }
+        h2 {
+            margin-top: 2rem;
+            color: #2d3748;
+            border-bottom: 1px solid #e2e8f0;
+            padding-bottom: 0.25rem;
+        }
+        h3 {
+            color: #4a5568;
+            margin-top: 1.5rem;
+        }
+        code {
+            background-color: #edf2f7;
+            padding: 0.2rem 0.4rem;
+            border-radius: 4px;
+            font-family: monospace;
+            font-size: 0.9em;
+            color: #c05621;
+        }
+        pre {
+            background-color: #1a202c;
+            color: #e2e8f0;
+            padding: 1rem;
+            border-radius: 8px;
+            overflow-x: auto;
+        }
+        .note {
+            background-color: #ebf8ff;
+            border-left: 4px solid #3182ce;
+            padding: 1rem;
+            margin: 1rem 0;
+            color: #2c5282;
+        }
+        .warning {
+            background-color: #fffaf0;
+            border-left: 4px solid #dd6b20;
+            padding: 1rem;
+            margin: 1rem 0;
+            color: #7c2d12;
+        }
+        ul, ol {
+            padding-left: 1.5rem;
+        }
+        li {
+            margin-bottom: 0.5rem;
+        }
+        a {
+            color: #3182ce;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Configuration & Deployment Guide</h1>
+        <p>This document outlines the steps to configure EmailJS for forms and deploy the Paseda Ministries application to various platforms.</p>
+
+        <h2>1. EmailJS Configuration</h2>
+        <p>The application uses <strong>EmailJS</strong> to handle the Booking Form and Newsletter subscriptions without needing a backend server.</p>
+
+        <h3>Step 1: Create an Account</h3>
+        <ol>
+            <li>Go to <a href="https://www.emailjs.com/" target="_blank">EmailJS.com</a> and sign up for a free account.</li>
+            <li>Login to your dashboard.</li>
+        </ol>
+
+        <h3>Step 2: Add an Email Service</h3>
+        <ol>
+            <li>Click on <strong>Email Services</strong> in the sidebar.</li>
+            <li>Click <strong>Add New Service</strong>.</li>
+            <li>Select your email provider (e.g., Gmail).</li>
+            <li>Connect your account and click <strong>Create Service</strong>.</li>
+            <li>Copy the <code>Service ID</code> (e.g., <code>service_xxxxx</code>).</li>
+        </ol>
+
+        <h3>Step 3: Create Email Templates</h3>
+        <p>You need two templates: one for the Booking Form and one for the Newsletter.</p>
+
+        <h4>A. Booking Form Template</h4>
+        <ol>
+            <li>Click on <strong>Email Templates</strong> in the sidebar.</li>
+            <li>Click <strong>Create New Template</strong>.</li>
+            <li>Design your email. Use the following variable names in double curly braces <code>{{ }}</code> to pull data from the form:
+                <ul>
+                    <li><code>{{fullName}}</code></li>
+                    <li><code>{{email}}</code></li>
+                    <li><code>{{title}}</code></li>
+                    <li><code>{{organizationName}}</code></li>
+                    <li><code>{{dates}}</code></li>
+                    <li><code>{{location}}</code></li>
+                    <li><code>{{bookingType}}</code></li>
+                    <li><code>{{participants}}</code></li>
+                    <li><code>{{allowOffering}}</code></li>
+                </ul>
+            </li>
+            <li>Save the template and copy the <code>Template ID</code> (e.g., <code>template_xxxxx</code>).</li>
+        </ol>
+
+        <h4>B. Newsletter Template</h4>
+        <ol>
+            <li>Create another template.</li>
+            <li>Use the variable <code>{{email}}</code> to show the subscriber's email address.</li>
+            <li>Save and copy the <code>Template ID</code>.</li>
+        </ol>
+
+        <h3>Step 4: Get Your Public Key</h3>
+        <ol>
+            <li>Go to <strong>Account</strong> (click your avatar in top right).</li>
+            <li>Copy the <code>Public Key</code>.</li>
+        </ol>
+
+        <h3>Step 5: Update Environment Variables</h3>
+        <p>Create a file named <code>.env</code> in the project root (if it doesn't exist) and add your keys:</p>
+        <pre><code>VITE_EMAILJS_SERVICE_ID="your_service_id"
+VITE_EMAILJS_PUBLIC_KEY="your_public_key"
+VITE_EMAILJS_BOOKING_TEMPLATE_ID="your_booking_template_id"
+VITE_EMAILJS_NEWSLETTER_TEMPLATE_ID="your_newsletter_template_id"</code></pre>
+
+        <div class="warning">
+            <strong>Important:</strong> Never commit your <code>.env</code> file to public repositories if you want to keep these keys private (though Public Keys are generally safe to expose in client-side code, it's good practice to manage them via environment variables).
+        </div>
+
+        <h2>2. Building the Application</h2>
+        <p>Before deploying, you must build the project to generate the static files.</p>
+        <pre><code>npm run build</code></pre>
+        <p>This command creates a <code>dist</code> folder in your project directory containing the optimized HTML, CSS, and JavaScript files ready for deployment.</p>
+
+        <h2>3. Deployment Options</h2>
+
+        <h3>Option A: Deploying to cPanel</h3>
+        <p>cPanel is a common control panel for shared hosting.</p>
+        <ol>
+            <li>Run <code>npm run build</code> on your local machine.</li>
+            <li>Log in to your cPanel File Manager.</li>
+            <li>Navigate to your <code>public_html</code> folder (or the subdomain folder).</li>
+            <li>Upload all files <strong>inside</strong> the local <code>dist</code> folder to the server folder.</li>
+            <li><strong>Crucial Step for React Router:</strong> Create a file named <code>.htaccess</code> in the same folder and add the following code. This ensures that refreshing a page (like <code>/about</code>) doesn't give a 404 error.</li>
+        </ol>
+        <pre><code>&lt;IfModule mod_rewrite.c&gt;
+  RewriteEngine On
+  RewriteBase /
+  RewriteRule ^index\.html$ - [L]
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule . /index.html [L]
+&lt;/IfModule&gt;</code></pre>
+
+        <h3>Option B: Deploying to Vercel</h3>
+        <p>Vercel is optimized for frontend frameworks.</p>
+        <ol>
+            <li>Push your code to a Git repository (GitHub, GitLab, or Bitbucket).</li>
+            <li>Log in to <a href="https://vercel.com" target="_blank">Vercel</a>.</li>
+            <li>Click <strong>Add New...</strong> > <strong>Project</strong>.</li>
+            <li>Import your repository.</li>
+            <li>Vercel usually auto-detects Vite settings:
+                <ul>
+                    <li><strong>Build Command:</strong> <code>vite build</code> (or <code>npm run build</code>)</li>
+                    <li><strong>Output Directory:</strong> <code>dist</code></li>
+                </ul>
+            </li>
+            <li><strong>Environment Variables:</strong> Expand the "Environment Variables" section and add the EmailJS keys you gathered in Section 1 (e.g., <code>VITE_EMAILJS_SERVICE_ID</code>, etc.).</li>
+            <li>Click <strong>Deploy</strong>.</li>
+        </ol>
+
+        <h3>Option C: Deploying to Netlify</h3>
+        <p>Netlify is another excellent option for static sites.</p>
+        
+        <h4>Method 1: Connect to Git (Recommended)</h4>
+        <ol>
+            <li>Push your code to GitHub/GitLab/Bitbucket.</li>
+            <li>Log in to <a href="https://netlify.com" target="_blank">Netlify</a>.</li>
+            <li>Click <strong>Add new site</strong> > <strong>Import from an existing project</strong>.</li>
+            <li>Select your provider and repository.</li>
+            <li>Build settings should auto-populate:
+                <ul>
+                    <li><strong>Build command:</strong> <code>npm run build</code></li>
+                    <li><strong>Publish directory:</strong> <code>dist</code></li>
+                </ul>
+            </li>
+            <li>Click <strong>Environment variables</strong> and add your EmailJS keys.</li>
+            <li>Click <strong>Deploy</strong>.</li>
+        </ol>
+
+        <h4>Method 2: Manual Upload</h4>
+        <ol>
+            <li>Run <code>npm run build</code> locally.</li>
+            <li>Log in to Netlify and go to the "Sites" tab.</li>
+            <li>Drag and drop your <code>dist</code> folder into the drop zone.</li>
+        </ol>
+
+        <div class="note">
+            <strong>Note on Netlify Routing:</strong> A <code>_redirects</code> file has already been added to the <code>public</code> folder. This ensures that refreshing pages works correctly on Netlify.
+        </div>
+    </div>
+</body>
+</html>
