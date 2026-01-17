@@ -36,7 +36,7 @@ export default function NextSections() {
             <p className="text-xs font-medium tracking-[0.2em] text-brand">ABOUT</p>
             <h2 className="mt-3 text-4xl font-semibold tracking-tight sm:text-5xl">Preacher Jay</h2>
             <p className="mt-6 text-lg leading-8 text-neutral-700">
-              Evangelist Joseph Achanya is the pioneer of Mega Harvest. He is the host of “Heal the Sick” radio/ TV broadcast and is an active member of Revival Today Evangelistic Association, USA. Evangelist Joseph Achanya believes that people today need to see Jesus the same as people in Bible days. For this reason, he has conducted numerous international open air crusades and outreaches with the theme “THIS SAME JESUS”.
+              Evangelist Joseph Achanya is the pioneer of Paseda Ministries. He is the host of “Heal the Sick” radio/ TV broadcast and is an active member of Revival Today Evangelistic Association, USA. Evangelist Joseph Achanya believes that people today need to see Jesus the same as people in Bible days. For this reason, he has conducted numerous international open air crusades and outreaches with the theme “THIS SAME JESUS”.
             </p>
             <div className="mt-10">
               <Link

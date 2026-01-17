@@ -10,7 +10,7 @@ export default function PartnerSection() {
             <span className="block">Make an eternal impact.</span>
           </h4>
           <p className="mt-6 max-w-[700px] text-base leading-7 text-neutral-700">
-            Do you share a passion for reaching the lost? Do you desire to be personally involved in the end-time harvest in a meaningful way? Mega Harvest Partnership Program puts you on the front line of global evangelism. The ministry partnership program is a practical and highly effective initiative that reaches thousands of precious souls face to face and millions via television with the gospel of Jesus Christ every year. We are on a mission to announce Jesus to all nations until He is Believed throughout the world. You can be a significant part of it!
+            Do you share a passion for reaching the lost? Do you desire to be personally involved in the end-time harvest in a meaningful way? Paseda Ministries Partnership Program puts you on the front line of global evangelism. The ministry partnership program is a practical and highly effective initiative that reaches thousands of precious souls face to face and millions via television with the gospel of Jesus Christ every year. We are on a mission to announce Jesus to all nations until He is Believed throughout the world. You can be a significant part of it!
           </p>
           <div className="mt-6">
             <a

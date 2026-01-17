@@ -62,7 +62,7 @@ export default function MissionVision() {
             </h2>
             <div className="space-y-6 text-lg leading-relaxed text-neutral-600">
               <p>
-                Evangelist Joseph Achanya is the pioneer of Mega Harvest. He is
+                Evangelist Joseph Achanya is the pioneer of Paseda Ministries. He is
                 the host of “Heal the Sick” radio/ TV broadcast and is an active
                 member of Revival Today Evangelistic Association, USA.
               </p>
@@ -75,7 +75,7 @@ export default function MissionVision() {
               <p>
                 Evangelist Joseph Achanya is dedicated to winning the lost and
                 DEMONSTRATING the power of the resurrected Christ through signs,
-                wonders, and miracles. The founding of Mega Harvest was greatly
+                wonders, and miracles. The founding of Paseda Ministries was greatly
                 inspired by the ministry of Dr. T.L. Osborn.
               </p>
             </div>

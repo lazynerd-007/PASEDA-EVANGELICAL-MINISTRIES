@@ -45,7 +45,7 @@ export default function Footer() {
           {/* Copyright section */}
           <div className="text-center sm:text-left">
             <p className="text-xs leading-relaxed text-gray-500 sm:text-sm">
-              Copyright © 2023 Mega Harvest Global Mission
+              Copyright © 2023 Paseda Evangelical Ministries
             </p>
           </div>
 

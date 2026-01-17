@@ -20,7 +20,7 @@ export default function HowToGive() {
             <p>
               Do you share a passion for reaching the lost? Do you desire to be
               personally involved in the end-time harvest in a meaningful way?
-              Mega Harvest Partnership Program puts you on the front line of
+              Paseda Ministries Partnership Program puts you on the front line of
               global evangelism. The ministry partnership program is a practical
               and highly effective initiative that reaches thousands of precious
               souls face to face and millions via television with the gospel of

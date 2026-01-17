@@ -27,10 +27,10 @@ export default function Header() {
           <div className="mx-auto w-full max-w-[1550px] px-4 md:px-[48px] lg:px-[90px]">
             <div className="flex h-14 items-center justify-between md:h-20">
               {/* Logo */}
-              <Link to="/" aria-label="Mega Harvest" className="flex-shrink-0">
+              <Link to="/" aria-label="Paseda Ministries" className="flex-shrink-0">
                 <img
                   src={LOGO}
-                  alt="Mega Harvest"
+                  alt="Paseda Ministries"
                   className="h-8 w-auto select-none md:h-12"
                   loading="eager"
                   decoding="async"
