@@ -84,7 +84,12 @@
         <h1>Configuration & Deployment Guide</h1>
         <p>This document outlines the steps to configure EmailJS for forms and deploy the Paseda Ministries application to various platforms.</p>
 
-        <h2>1. EmailJS Configuration</h2>
+        <h2>1. Installation</h2>
+        <p>Before proceeding with configuration or development, ensure you have Node.js installed and then install the project dependencies.</p>
+        <pre><code>npm install</code></pre>
+        <p>This command installs all the necessary packages listed in <code>package.json</code>.</p>
+
+        <h2>2. EmailJS Configuration</h2>
         <p>The application uses <strong>EmailJS</strong> to handle the Booking Form and Newsletter subscriptions without needing a backend server.</p>
 
         <h3>Step 1: Create an Account</h3>
@@ -149,12 +154,32 @@ VITE_EMAILJS_NEWSLETTER_TEMPLATE_ID="your_newsletter_template_id"</code></pre>
             <strong>Important:</strong> Never commit your <code>.env</code> file to public repositories if you want to keep these keys private (though Public Keys are generally safe to expose in client-side code, it's good practice to manage them via environment variables).
         </div>
 
-        <h2>2. Building the Application</h2>
+        <h2>3. Local Development & Testing</h2>
+        <p>Before building or deploying, you likely want to run the application locally to test changes.</p>
+        
+        <h3>Running the Development Server</h3>
+        <p>To start the local development server with hot-reloading (updates instantly as you save files):</p>
+        <pre><code>npm run dev</code></pre>
+        <p>This will typically start the app at <code>http://localhost:5173</code>.</p>
+
+        <h3>Testing the Production Build Locally</h3>
+        <p>It is good practice to test the final build locally to ensure everything works as expected before uploading to a server.</p>
+        <ol>
+            <li>Run the build command:
+                <pre><code>npm run build</code></pre>
+            </li>
+            <li>Run the preview command:
+                <pre><code>npm run preview</code></pre>
+            </li>
+        </ol>
+        <p>This will serve the files from the <code>dist</code> folder, mimicking a production environment.</p>
+
+        <h2>4. Building the Application</h2>
         <p>Before deploying, you must build the project to generate the static files.</p>
         <pre><code>npm run build</code></pre>
         <p>This command creates a <code>dist</code> folder in your project directory containing the optimized HTML, CSS, and JavaScript files ready for deployment.</p>
 
-        <h2>3. Deployment Options</h2>
+        <h2>5. Deployment Options</h2>
 
         <h3>Option A: Deploying to cPanel</h3>
         <p>cPanel is a common control panel for shared hosting.</p>
